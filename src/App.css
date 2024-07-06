@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    width: 30rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #cee2ec;
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+}
+
+.App form {
+    display: flex;
+    margin: 1rem auto;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.App h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.App li {
+    list-style: none;
+    margin: 0.5rem 0;
+    background-color: #f3fbff;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
