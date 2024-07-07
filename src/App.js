@@ -1,44 +1,49 @@
 // Library
 import React from "react";
-import { collection, addDoc, onSnapshot } from "firebase/firestore";
 
 // Local
 import "./App.css";
-import { db } from "./firebase";
 
 function App() {
-    const [todos, setTodos] = React.useState([]);
-    const [input, setInput] = React.useState("");
-
-    React.useEffect(() => {
-        const todoCollection = collection(db, "todos");
-        return onSnapshot(todoCollection, (snapshot) => {
-            console.log("New data received");
-            setTodos(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-        });
-    }, []);
-
-    const addTodo = async (e) => {
-        e.preventDefault();
-        const todoCollection = collection(db, "todos");
-        await addDoc(todoCollection, { todo: input });
-        setInput("");
-    };
-
     return (
-        <div className="App">
-            <h1>Todo App</h1>
-            <form>
-                <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
-                <button type="submit" onClick={addTodo}>
-                    Add Todo
-                </button>
-            </form>
-            <ul>
-                {todos.map((todo) => (
-                    <li key={todo.id}>{todo.todo}</li>
-                ))}
-            </ul>
+        <div className="app">
+            <div className="exercise-feed">
+                <div className="_day">
+                    <h1>Monday, 12th March</h1>
+                    <hr />
+                    <div className="_exercise">
+                        <span>Bicep Curl</span>
+                        <span>3 sets</span>
+                        <span>10 reps</span>
+                        <span>10kg</span>
+                    </div>
+                    <div className="_exercise">
+                        <span>Pushup</span>
+                        <span>15</span>
+                    </div>
+                    <div className="_rest _short"></div>
+                    <div className="_exercise">
+                        <span>Pushup</span>
+                        <span>12</span>
+                    </div>
+                    <div className="_rest _medium"></div>
+                    <div className="_exercise">
+                        <span>Pushup</span>
+                        <span>10</span>
+                    </div>
+                </div>
+                <div className="_day">
+                    <h1>Wednesday, 14th March</h1>
+                    <hr />
+                    <div className="_exercise">
+                        <span>Bicep Curl</span>
+                        <span>3 sets</span>
+                        <span>10 reps</span>
+                        <span>10kg</span>
+                    </div>
+                </div>
+            </div>
+            <div className="exercise-input"></div>
         </div>
     );
 }
