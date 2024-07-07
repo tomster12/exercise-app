@@ -7,16 +7,13 @@ export default function Auth() {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-
         setLoading(true);
         const { error } = await supabase.auth.signInWithOtp({ email });
-
         if (error) {
             alert(error.error_description || error.message);
         } else {
             alert("Check your email for the login link!");
         }
-
         setLoading(false);
     };
 

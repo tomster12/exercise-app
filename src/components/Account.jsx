@@ -9,13 +9,10 @@ export default function Account({ session }) {
 
     useEffect(() => {
         let ignore = false;
-
         async function getProfile() {
             setLoading(true);
             const { user } = session;
-
             const { data, error } = await supabase.from("profiles").select(`username, website, avatar_url`).eq("id", user.id).single();
-
             if (!ignore) {
                 if (error) {
                     console.warn(error);
@@ -25,23 +22,16 @@ export default function Account({ session }) {
                     setAvatarUrl(data.avatar_url);
                 }
             }
-
             setLoading(false);
         }
-
         getProfile();
-
-        return () => {
-            ignore = true;
-        };
+        return () => (ignore = true);
     }, [session]);
 
     async function updateProfile(event, avatarUrl) {
         event.preventDefault();
-
         setLoading(true);
         const { user } = session;
-
         const updates = {
             id: user.id,
             username,
@@ -49,9 +39,7 @@ export default function Account({ session }) {
             avatar_url: avatarUrl,
             updated_at: new Date(),
         };
-
         const { error } = await supabase.from("profiles").upsert(updates);
-
         if (error) {
             alert(error.message);
         } else {
