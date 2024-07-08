@@ -1,0 +1,41 @@
+.date-picker {
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.date-picker ._date {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.date-picker ._button {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.7rem;
+}
+
+.date-picker ._back {
+    content: url("../assets/left.png");
+}
+
+.date-picker ._forward {
+    content: url("../assets/right.png");
+}
+
+.date-picker * {
+    background-color: #d5d5d5;
+    box-shadow: 0 0 1rem 0.2rem #3c3c3c;
+    border-radius: 1rem;
+}
+
+.date-picker *:hover {
+    background-color: #dedede;
+    box-shadow: 0 0 1rem 0.2rem #4a4a4a;
+    cursor: pointer;
+}

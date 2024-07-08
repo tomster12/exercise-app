@@ -1,0 +1,40 @@
+.scrollable-div {
+    position: relative;
+    height: 100%;
+    --bar-gap: 0.4rem;
+    --bar-width: 1rem;
+}
+
+.scrollable-div ._content {
+    position: relative;
+    width: calc(100% - var(--bar-width) - 2 * var(--bar-gap));
+    height: 100%;
+    overflow-y: auto;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollable-div ._bar {
+    position: absolute;
+    top: var(--bar-gap);
+    right: var(--bar-gap);
+    bottom: var(--bar-gap);
+    width: var(--bar-width);
+    border-radius: var(--bar-width);
+    background-color: #cdcdcd;
+}
+
+.scrollable-div ._bar ._thumb {
+    position: absolute;
+    background-color: #787878;
+    width: var(--bar-width);
+    height: 3rem;
+    border-radius: var(--bar-width);
+    cursor: pointer;
+}
+
+.scrollable-div ._bar ._thumb:active {
+    background-color: #4f4f4f;
+}
