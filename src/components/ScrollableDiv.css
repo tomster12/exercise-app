@@ -10,8 +10,6 @@
     width: calc(100% - var(--bar-width) - 2 * var(--bar-gap));
     height: 100%;
     overflow-y: auto;
-
-    /* Hide scrollbar */
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -26,7 +24,7 @@
     background-color: #cdcdcd;
 }
 
-.scrollable-div ._bar ._thumb {
+.scrollable-div ._thumb {
     position: absolute;
     background-color: #787878;
     width: var(--bar-width);
@@ -35,6 +33,6 @@
     cursor: pointer;
 }
 
-.scrollable-div ._bar ._thumb:active {
+.scrollable-div ._thumb:active {
     background-color: #4f4f4f;
 }

@@ -2,31 +2,31 @@ import { useEffect, useRef } from "react";
 import "./ScrollableDiv.css";
 
 function ScrollableDiv(props) {
-    const content = useRef(null);
+    const contentRef = useRef(null);
 
     useEffect(() => {
-        const _content = content.current;
-        const _bar = _content.parentElement.querySelector("._bar");
-        const _thumb = _bar.querySelector("._thumb");
+        const content = contentRef.current;
+        const bar = content.parentElement.querySelector("._bar");
+        const thumb = bar.querySelector("._thumb");
 
         const updateThumb = () => {
-            _thumb.style.height = `${(_content.clientHeight / _content.scrollHeight) * 100}%`;
-            _thumb.style.top = `${(_content.scrollTop / _content.scrollHeight) * 100}%`;
+            thumb.style.height = `${(content.clientHeight / content.scrollHeight) * 100}%`;
+            thumb.style.top = `${(content.scrollTop / content.scrollHeight) * 100}%`;
         };
 
-        _content.addEventListener("scroll", updateThumb);
+        content.addEventListener("scroll", updateThumb);
         window.addEventListener("resize", updateThumb);
         updateThumb();
 
-        _thumb.addEventListener("mousedown", (e) => {
+        thumb.addEventListener("mousedown", (e) => {
             e.preventDefault();
             const startY = e.clientY;
-            const startTop = parseInt(_thumb.style.top);
+            const startTop = parseInt(thumb.style.top);
 
             const mousemove = (e) => {
                 const diffY = e.clientY - startY;
-                const newTop = Math.min(100, Math.max(0, startTop + (diffY / _bar.clientHeight) * 100));
-                _content.scrollTop = (newTop / 100) * _content.scrollHeight;
+                const newTop = Math.min(100, Math.max(0, startTop + (diffY / bar.clientHeight) * 100));
+                content.scrollTop = (newTop / 100) * content.scrollHeight;
             };
 
             const mouseup = () => {
@@ -41,7 +41,7 @@ function ScrollableDiv(props) {
 
     return (
         <div className="scrollable-div">
-            <div className="_content" ref={content}>
+            <div className="_content" ref={contentRef}>
                 {props.children}
             </div>
             <div className="_bar">
