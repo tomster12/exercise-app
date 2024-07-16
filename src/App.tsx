@@ -1,7 +1,5 @@
-// https://supabase.com/docs/guides/getting-started/tutorials/with-react
-
 import "./App.css";
-import GlobalFeedView from "./components/GlobalFeedView";
+import GlobalFeedView from "./components/GlobalFeedView.tsx";
 import homeImg from "./assets/home.png";
 import settingsImg from "./assets/settings.png";
 import profileImg from "./assets/profile.png";

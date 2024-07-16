@@ -1,7 +1,7 @@
 import "./GlobalFeedView.css";
-import Dropdown from "./Dropdown";
-import DatePicker from "./DatePicker";
-import ScrollableDiv from "./ScrollableDiv";
+import Dropdown from "./Dropdown.tsx";
+import DatePicker from "./DatePicker.tsx";
+import ScrollableDiv from "./ScrollableDiv.tsx";
 
 function GlobalFeedView() {
     return (
