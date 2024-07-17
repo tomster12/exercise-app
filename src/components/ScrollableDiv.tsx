@@ -24,6 +24,7 @@ function ScrollableDiv(props: { children: React.ReactNode }) {
             e.preventDefault();
             const startY = e.clientY;
             const startTop = parseInt(thumb.style.top);
+            thumb.classList.add("active");
 
             const mousemove = (e: MouseEvent) => {
                 const diffY = e.clientY - startY;
@@ -32,6 +33,7 @@ function ScrollableDiv(props: { children: React.ReactNode }) {
             };
 
             const mouseup = () => {
+                thumb.classList.remove("active");
                 window.removeEventListener("mousemove", mousemove);
                 window.removeEventListener("mouseup", mouseup);
             };

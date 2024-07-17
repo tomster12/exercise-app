@@ -5,7 +5,7 @@
     gap: 1rem;
 }
 
-.date-picker ._date {
+.date-picker > ._date {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -14,27 +14,29 @@
     font-weight: 700;
 }
 
-.date-picker ._button {
+.date-picker > ._button {
     width: 3rem;
     height: 3rem;
     padding: 0.7rem;
 }
 
-.date-picker ._back {
+.date-picker > ._button._back {
     content: url("../assets/left.png");
 }
 
-.date-picker ._forward {
+.date-picker > ._button._forward {
     content: url("../assets/right.png");
 }
 
-.date-picker * {
+.date-picker img,
+.date-picker div {
     background-color: #d5d5d5;
     box-shadow: 0 0 1rem 0.2rem #3c3c3c;
     border-radius: 1rem;
 }
 
-.date-picker *:hover {
+.date-picker img:hover,
+.date-picker div:hover {
     background-color: #dedede;
     box-shadow: 0 0 1rem 0.2rem #4a4a4a;
     cursor: pointer;

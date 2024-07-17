@@ -1,12 +1,37 @@
 .dropdown {
     position: relative;
-    padding: 1rem;
-    background-color: #c1c1c1;
-    border-radius: 0.5rem;
+    height: 2.5rem;
 }
 
-.dropdown ._option {
-    display: none;
-    position: absolute;
-    z-index: 1;
+.dropdown > ._content {
+    height: 2.5rem;
+    background-color: #cbcbcb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: height 0.1s ease;
+}
+
+.dropdown > ._content > ._options {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.dropdown > ._content > ._current {
+    background-color: #d8d8d8;
+}
+
+.dropdown > ._content > ._current,
+.dropdown > ._content > ._options > li {
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    list-style: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.dropdown > ._content > ._current:hover,
+.dropdown > ._content > ._options > li:hover {
+    background-color: #e2e2e2;
 }

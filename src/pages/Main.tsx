@@ -1,14 +1,14 @@
-import "./GlobalFeedView.css";
-import Dropdown from "./Dropdown";
-import DatePicker from "./DatePicker";
-import ScrollableDiv from "./ScrollableDiv";
+import "./Main.css";
+import Dropdown from "../components/Dropdown";
+import DatePicker from "../components/DatePicker";
+import ScrollableDiv from "../components/ScrollableDiv";
 
-function GlobalFeedView() {
+function Main() {
     return (
-        <div className="global-view">
-            <div className="exercise-feed">
+        <div className="main">
+            <div className="exercise-feed-container">
                 <ScrollableDiv>
-                    <div className="_feed-content">
+                    <div className="exercise-feed">
                         <div className="_day">
                             <h1>Sunday, 11th March</h1>
                             <hr />
@@ -201,8 +201,8 @@ function GlobalFeedView() {
                 <DatePicker />
                 <div className="_form">
                     <div className="_left">
-                        <Dropdown />
-                        <div className="_submit"></div>
+                        <Dropdown options={["Rowing", "Bicep Curl", "Pushup"]} />
+                        <div className="_submit">Add</div>
                     </div>
                     <div className="_right">
                         <div className="_property-input">10</div>
@@ -213,4 +213,4 @@ function GlobalFeedView() {
     );
 }
 
-export default GlobalFeedView;
+export default Main;

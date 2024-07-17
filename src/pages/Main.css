@@ -1,11 +1,11 @@
-.global-view {
+.main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     height: 100%;
 }
 
-.exercise-feed {
+.exercise-feed-container {
     flex-grow: 1;
     box-shadow: 0 0 1rem 0.2rem rgb(60, 60, 60);
     border-radius: 1rem;
@@ -13,7 +13,7 @@
     background-color: #f2f2f2;
 }
 
-.exercise-feed ._feed-content {
+.exercise-feed {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -31,7 +31,7 @@
     font-weight: 700;
 }
 
-.exercise-feed hr {
+.exercise-feed ._day hr {
     color: #afafaf;
     margin: 0 0.5rem;
 }
@@ -42,7 +42,7 @@
     border-radius: 0.8rem;
 }
 
-.exercise-feed ._exercise {
+.exercise-feed > ._day ._exercise {
     display: flex;
     padding: 0.5rem;
     padding-right: 2rem;
@@ -78,6 +78,7 @@
 }
 
 .exercise-feed ._exercise ._muscle img {
+    display: none;
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 0.5rem;
@@ -125,8 +126,8 @@
 }
 
 .exercise-feed ._exercise,
-.exercise-feed ._exercise ._muscle,
-.exercise-feed ._exercise ._type {
+.exercise-feed ._exercise ._type,
+.exercise-feed ._exercise ._muscle {
     position: relative;
     transition: all 0.1s;
     box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
@@ -140,7 +141,7 @@
 
 .exercise-feed ._exercise ._type:hover,
 .exercise-feed ._exercise ._muscle:hover {
-    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
     top: -0.1rem;
 }
 
@@ -181,7 +182,8 @@
 /* ------------------------------ */
 
 .exercise-input {
-    height: 20rem;
+    height: 15rem;
+    min-height: 15rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -205,16 +207,28 @@
     background-color: #5e5e5e;
     border-radius: 1rem 0 0 1rem;
 }
-.exercise-input ._form ._left Dropdown {
-    height: 1.5rem;
+
+.exercise-input ._form .dropdown ._content {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
 }
 
-.exercise-input ._form ._left ._submit {
-    height: 6rem;
+.exercise-input ._form ._submit {
+    height: 5rem;
     background-color: #7ec18b;
     border-radius: 0.5rem;
     cursor: pointer;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
 }
+
+.exercise-input ._form ._submit:hover {
+    background-color: #8ddf9e;
+    box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.4);
+}
+
 .exercise-input ._form ._right {
     padding: 2rem;
 }

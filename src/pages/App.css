@@ -56,7 +56,7 @@ body,
     padding-top: calc(2 * var(--sidebar-gap));
 }
 
-.side-bar-option {
+.side-bar > ._option {
     width: calc(var(--sidebar-width) - 2 * var(--sidebar-gap));
     height: calc(var(--sidebar-width) - 2 * var(--sidebar-gap));
     padding: 0.4rem;
@@ -67,7 +67,7 @@ body,
     cursor: pointer;
 }
 
-.side-bar-option:hover {
+.side-bar > ._option:hover {
     background-color: #ececec;
     box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.55);
 }

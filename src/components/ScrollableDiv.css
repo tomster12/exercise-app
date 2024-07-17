@@ -5,7 +5,7 @@
     --bar-width: 1rem;
 }
 
-.scrollable-div ._content {
+.scrollable-div > ._content {
     position: relative;
     width: calc(100% - var(--bar-width) - 2 * var(--bar-gap));
     height: 100%;
@@ -14,7 +14,7 @@
     -ms-overflow-style: none;
 }
 
-.scrollable-div ._bar {
+.scrollable-div > ._bar {
     position: absolute;
     top: var(--bar-gap);
     right: var(--bar-gap);
@@ -24,15 +24,20 @@
     background-color: #cdcdcd;
 }
 
-.scrollable-div ._thumb {
+.scrollable-div > ._bar > ._thumb {
     position: absolute;
     background-color: #787878;
     width: var(--bar-width);
     height: 3rem;
     border-radius: var(--bar-width);
     cursor: pointer;
+    transition: background-color 0.1s;
 }
 
-.scrollable-div ._thumb:active {
-    background-color: #4f4f4f;
+.scrollable-div > ._bar > ._thumb:hover {
+    background-color: #808080;
+}
+
+.scrollable-div > ._bar > ._thumb.active {
+    background-color: #8f8f8f;
 }
