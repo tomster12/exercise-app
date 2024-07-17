@@ -1,14 +1,14 @@
 import "./GlobalFeedView.css";
-import Dropdown from "./Dropdown.tsx";
-import DatePicker from "./DatePicker.tsx";
-import ScrollableDiv from "./ScrollableDiv.tsx";
+import Dropdown from "./Dropdown";
+import DatePicker from "./DatePicker";
+import ScrollableDiv from "./ScrollableDiv";
 
 function GlobalFeedView() {
     return (
-        <div className="global-feed-view">
-            <div className="exercise-feed-wrapper">
+        <div className="global-view">
+            <div className="exercise-feed">
                 <ScrollableDiv>
-                    <div className="exercise-feed">
+                    <div className="_feed-content">
                         <div className="_day">
                             <h1>Sunday, 11th March</h1>
                             <hr />
@@ -199,7 +199,7 @@ function GlobalFeedView() {
 
             <div className="exercise-input">
                 <DatePicker />
-                <div className="exercise-input-form">
+                <div className="_form">
                     <div className="_left">
                         <Dropdown />
                         <div className="_submit"></div>

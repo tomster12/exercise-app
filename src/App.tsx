@@ -8,11 +8,11 @@ import logoutImg from "./assets/logout.png";
 function App() {
     return (
         <div className="app">
-            <div className="app-side-bar">
-                <img className="_option" alt="" src={homeImg}></img>
-                <img className="_option" alt="" src={settingsImg}></img>
-                <img className="_option" alt="" src={profileImg}></img>
-                <img className="_option" alt="" src={logoutImg}></img>
+            <div className="side-bar">
+                <img className="side-bar-option" src={homeImg}></img>
+                <img className="side-bar-option" src={settingsImg}></img>
+                <img className="side-bar-option" src={profileImg}></img>
+                <img className="side-bar-option" src={logoutImg}></img>
             </div>
             <div className="app-content">
                 <GlobalFeedView />

@@ -13,11 +13,10 @@
     font-family: "Tauri", sans-serif;
     font-size: 18px;
     color: #4b4b4b;
-    --sidebar-width: 3rem;
-    --sidebar-gap: 0.4rem;
-    --general-spacing: 1rem;
     user-select: none;
 }
+
+/* ----------------------------------------------- */
 
 html,
 body,
@@ -34,9 +33,12 @@ body,
     position: relative;
     max-width: 60rem;
     margin: auto;
+    --sidebar-width: 3rem;
+    --sidebar-gap: 0.4rem;
+    --general-spacing: 1rem;
 }
 
-.app-side-bar {
+.side-bar {
     position: absolute;
     top: var(--general-spacing);
     left: var(--general-spacing);
@@ -54,7 +56,7 @@ body,
     padding-top: calc(2 * var(--sidebar-gap));
 }
 
-.app-side-bar ._option {
+.side-bar-option {
     width: calc(var(--sidebar-width) - 2 * var(--sidebar-gap));
     height: calc(var(--sidebar-width) - 2 * var(--sidebar-gap));
     padding: 0.4rem;
@@ -65,7 +67,7 @@ body,
     cursor: pointer;
 }
 
-.app-side-bar ._option:hover {
+.side-bar-option:hover {
     background-color: #ececec;
     box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.55);
 }
