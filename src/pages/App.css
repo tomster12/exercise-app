@@ -46,7 +46,6 @@ body,
     height: calc(100% - 2 * var(--general-spacing));
     background-color: #a0a0a0;
     border-radius: var(--general-spacing);
-    z-index: 10;
     box-shadow: 0 0 1rem 0.2rem rgb(60, 60, 60);
     border-radius: 1rem;
     display: flex;

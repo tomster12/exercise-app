@@ -1,7 +1,28 @@
+import { useState } from "react";
 import "./Main.css";
 import Dropdown from "../components/Dropdown";
 import DatePicker from "../components/DatePicker";
 import ScrollableDiv from "../components/ScrollableDiv";
+
+function PropertyInput({ initialValue = 0, increments: increment = 1 }: { initialValue: number; increments: number }) {
+    const [value, setValue] = useState(initialValue);
+
+    function clickDecrement() {
+        setValue(value - increment);
+    }
+
+    function clickIncrement() {
+        setValue(value + increment);
+    }
+
+    return (
+        <div className="property-input">
+            <div className="_button _decrement" onClick={clickDecrement}>-</div>
+            <div className="_value">{initialValue}</div>
+            <div className="_button _increment" onClick={clickIncrement}>+</div>
+        </div>
+    );
+}
 
 function Main() {
     return (
@@ -200,12 +221,19 @@ function Main() {
             <div className="exercise-input">
                 <DatePicker />
                 <div className="_form">
-                    <div className="_left">
+                <div className="_left">
                         <Dropdown options={["Rowing", "Bicep Curl", "Pushup"]} />
                         <div className="_submit">Add</div>
                     </div>
                     <div className="_right">
-                        <div className="_property-input">10</div>
+                        <ScrollableDiv>
+                            <div className="_property-inputs">
+                                <PropertyInput initialValue={0} increments={1} />
+                                <PropertyInput initialValue={0} increments={1} />
+                                <PropertyInput initialValue={0} increments={1} />
+                                <PropertyInput initialValue={0} increments={1} />
+                            </div>
+                        </ScrollableDiv>
                     </div>
                 </div>
             </div>

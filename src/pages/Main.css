@@ -78,7 +78,7 @@
 }
 
 .exercise-feed ._exercise ._muscle img {
-    display: none;
+    /* display: none; */
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 0.5rem;
@@ -181,24 +181,20 @@
 
 /* ------------------------------ */
 
-.exercise-input {
-    height: 15rem;
-    min-height: 15rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .exercise-input ._form {
-    flex-grow: 1;
+    margin-top: 1rem;
+    height: 11rem;
+    display: flex;
+    flex-shrink: 0;
+    overflow: hidden;
     background-color: rgb(81, 81, 81);
     box-shadow: 0 0 1rem 0.2rem rgb(60, 60, 60);
     border-radius: 1rem;
-    display: flex;
 }
 
 .exercise-input ._form ._left {
-    width: 50%;
+    width: 22rem;
+    height: 100%;
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
@@ -230,13 +226,65 @@
 }
 
 .exercise-input ._form ._right {
-    padding: 2rem;
+    flex-grow: 1;
 }
 
-.exercise-input ._form ._property-input {
-    width: 4rem;
-    padding: 0.5rem 1rem;
+.exercise-input ._property-inputs {
+    flex-direction: column;
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+/* ------------------------------ */
+
+.property-input {
+    padding: 0.5rem;
     text-align: center;
-    background-color: #f1f1f1;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.property-input > ._button {
+    width: 3rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    background-color: #e1e1e1;
+}
+
+.property-input > ._button:hover {
+    background-color: #eaeaea;
+}
+
+.property-input > ._decrement {
+    line-height: 1.8rem;
+}
+
+.property-input > ._increment {
+    line-height: 2rem;
+}
+
+.property-input > ._value {
+    width: 8rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.3rem;
+    background-color: #f1f1f1;
+}
+
+.property-input > ._value:hover {
+    background-color: #fafafa;
+}
+
+.property-input > div {
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.528);
+    cursor: pointer;
+}
+
+.property-input > div:hover {
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.65);
 }
