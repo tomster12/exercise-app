@@ -35,17 +35,17 @@ body,
     margin: auto;
     --sidebar-width: 3rem;
     --sidebar-gap: 0.4rem;
-    --general-spacing: 1rem;
+    --inner-spacing: 1rem;
+    --vertical-spacing: 1.5rem;
 }
 
-.side-bar {
+.app-side-bar {
     position: absolute;
-    top: var(--general-spacing);
-    left: var(--general-spacing);
+    top: var(--vertical-spacing);
     width: var(--sidebar-width);
-    height: calc(100% - 2 * var(--general-spacing));
+    height: calc(100% - 2 * var(--vertical-spacing));
     background-color: #a0a0a0;
-    border-radius: var(--general-spacing);
+    border-radius: 1rem;
     box-shadow: 0 0 1rem 0.2rem rgb(60, 60, 60);
     border-radius: 1rem;
     display: flex;
@@ -55,7 +55,7 @@ body,
     padding-top: calc(2 * var(--sidebar-gap));
 }
 
-.side-bar > ._option {
+.app-side-bar > ._option {
     width: calc(var(--sidebar-width) - 2 * var(--sidebar-gap));
     height: calc(var(--sidebar-width) - 2 * var(--sidebar-gap));
     padding: 0.4rem;
@@ -66,15 +66,15 @@ body,
     cursor: pointer;
 }
 
-.side-bar > ._option:hover {
+.app-side-bar > ._option:hover {
     background-color: #ececec;
     box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.55);
 }
 
 .app-content {
     position: absolute;
-    top: var(--general-spacing);
-    right: var(--general-spacing);
-    bottom: var(--general-spacing);
-    width: calc(100% - var(--sidebar-width) - 3 * var(--general-spacing));
+    top: var(--vertical-spacing);
+    right: 0;
+    bottom: var(--vertical-spacing);
+    width: calc(100% - var(--sidebar-width) - var(--inner-spacing));
 }

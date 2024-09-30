@@ -35,7 +35,7 @@ function Dropdown({ options }: { options: string[] }) {
   }
 
   return (
-    <div className="dropdown _open" ref={dropdownRef}>
+    <div className="dropdown reverse" ref={dropdownRef}>
       <div className="_content" ref={contentRef}>
         <p className="_current" onClick={clickCurrent}>{options[selected]}</p>
         <ul className="_options" ref={optionsRef}>
